@@ -10,6 +10,7 @@
 		454D54A97706A02C0CD8BBA2 /* Pods_Custom_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F6E8437CA6526C59CED35 /* Pods_Custom_App.framework */; };
 		6D4C9407C2E0C4863CAC4952 /* Pods_Custom_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14DDD4FABD4FDDBB55B27BC /* Pods_Custom_AppUITests.framework */; };
 		9A53283530C1DC02A4F02A81 /* Pods_Custom_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD38B980F76BFBAD09A76F72 /* Pods_Custom_AppTests.framework */; };
+		AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */; };
 		AB33240F1FD09B630068C5C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC881FCFF53A009A0CF7 /* GoogleService-Info.plist */; };
 		ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */; };
 		ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 		564EDC0CAD45143CC6772424 /* Pods-Custom-AppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppUITests/Pods-Custom-AppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		66643122B91CD60CCF113307 /* Pods-Custom-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppTests/Pods-Custom-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E289AB57227B7C170F0629 /* Pods-Custom-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppUITests/Pods-Custom-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		ABEDCC541FCFE6A6009A0CF7 /* Custom-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				ABEDCC8A1FCFFCBB009A0CF7 /* LoginViewController.swift */,
+				AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 			files = (
 				ABEDCC8B1FCFFCBB009A0CF7 /* LoginViewController.swift in Sources */,
 				ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */,
+				AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */,
 				ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
