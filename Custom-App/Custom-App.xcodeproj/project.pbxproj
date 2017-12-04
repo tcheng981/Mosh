@@ -12,6 +12,8 @@
 		9A53283530C1DC02A4F02A81 /* Pods_Custom_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD38B980F76BFBAD09A76F72 /* Pods_Custom_AppTests.framework */; };
 		AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */; };
 		AB33240F1FD09B630068C5C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC881FCFF53A009A0CF7 /* GoogleService-Info.plist */; };
+		AB33AA571FD50CD7003E9CC4 /* CreateEventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */; };
+		AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */; };
 		ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */; };
 		ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */; };
 		ABEDCC5D1FCFE6A6009A0CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */; };
@@ -48,6 +50,8 @@
 		66643122B91CD60CCF113307 /* Pods-Custom-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppTests/Pods-Custom-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E289AB57227B7C170F0629 /* Pods-Custom-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppUITests/Pods-Custom-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventPageViewController.swift; sourceTree = "<group>"; };
+		AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		ABEDCC541FCFE6A6009A0CF7 /* Custom-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -105,6 +109,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB33AA5C1FD51CD4003E9CC4 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
 		ABEDCC4B1FCFE6A5009A0CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +142,12 @@
 		ABEDCC561FCFE6A6009A0CF7 /* Custom-App */ = {
 			isa = PBXGroup;
 			children = (
+				AB33AA5C1FD51CD4003E9CC4 /* MainPage */,
 				ABEDCC881FCFF53A009A0CF7 /* GoogleService-Info.plist */,
 				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
 				ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */,
 				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
+				AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */,
 				ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */,
 				ABEDCC871FCFF0F5009A0CF7 /* Authentication */,
 				ABEDCC601FCFE6A6009A0CF7 /* LaunchScreen.storyboard */,
@@ -489,6 +503,8 @@
 				ABEDCC8B1FCFFCBB009A0CF7 /* LoginViewController.swift in Sources */,
 				ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */,
 				AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */,
+				AB33AA571FD50CD7003E9CC4 /* CreateEventPageViewController.swift in Sources */,
+				AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */,
 				ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
