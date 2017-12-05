@@ -113,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */,
+				AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */,
 			);
 			path = MainPage;
 			sourceTree = "<group>";
@@ -147,7 +148,6 @@
 				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
 				ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */,
 				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
-				AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */,
 				ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */,
 				ABEDCC871FCFF0F5009A0CF7 /* Authentication */,
 				ABEDCC601FCFE6A6009A0CF7 /* LaunchScreen.storyboard */,

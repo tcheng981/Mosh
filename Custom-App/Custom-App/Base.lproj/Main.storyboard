@@ -154,13 +154,13 @@
         <!--Create Event-->
         <scene sceneID="qEX-Rv-fLg">
             <objects>
-                <viewController id="7XJ-x1-etm" sceneMemberID="viewController">
+                <viewController id="7XJ-x1-etm" customClass="CreateEventPageViewController" customModule="Custom_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yFF-dh-Avw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="LzP-Yx-ZdM">
-                                <rect key="frame" x="0.0" y="64" width="375" height="291.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="509.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxE-xl-Qnr">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
@@ -180,32 +180,80 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akR-l2-iaI">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qKx-vT-Dd9">
                                         <rect key="frame" x="0.0" y="77" width="375" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-7y-66f">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Starts (DD/MM/YYYY)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtn-W8-9SL">
                                         <rect key="frame" x="0.0" y="109" width="375" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O2w-eR-rBx">
-                                        <rect key="frame" x="0.0" y="131.5" width="375" height="128"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wWf-Z6-sts">
+                                        <rect key="frame" x="0.0" y="131.5" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Starts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vUD-dg-OjS">
+                                        <rect key="frame" x="0.0" y="163.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mM5-1M-bCq">
+                                        <rect key="frame" x="0.0" y="186" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date Ends (DD/MM/YYYY)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R8C-uo-XZc">
+                                        <rect key="frame" x="0.0" y="218" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xr7-OA-4qs">
+                                        <rect key="frame" x="0.0" y="240.5" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Ends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E78-13-t4Y">
+                                        <rect key="frame" x="0.0" y="272.5" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="akR-l2-iaI">
+                                        <rect key="frame" x="0.0" y="295" width="375" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWd-7y-66f">
+                                        <rect key="frame" x="0.0" y="327" width="375" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Enter information about your event here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="O2w-eR-rBx">
+                                        <rect key="frame" x="0.0" y="349.5" width="375" height="128"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dah-I4-Jg8">
-                                        <rect key="frame" x="0.0" y="261.5" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="479.5" width="375" height="30"/>
                                         <color key="backgroundColor" red="0.25098040700000002" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Next">
+                                        <state key="normal" title="Create Event">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="Ux5-yK-O4J" kind="show" identifier="CreateEventOneToTwo" id="BSk-hi-P7m"/>
+                                            <action selector="createEventButtonPushed:" destination="7XJ-x1-etm" eventType="touchUpInside" id="qxH-1X-ZTD"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -220,36 +268,19 @@
                         <viewLayoutGuide key="safeArea" id="FXG-2T-FEh"/>
                     </view>
                     <navigationItem key="navigationItem" title="Create Event" id="69x-Yu-0md"/>
+                    <connections>
+                        <outlet property="dateEnds" destination="Xr7-OA-4qs" id="ivn-PK-w8t"/>
+                        <outlet property="dateStarts" destination="wWf-Z6-sts" id="rvC-mO-9uS"/>
+                        <outlet property="info" destination="O2w-eR-rBx" id="rvr-vt-DJX"/>
+                        <outlet property="location" destination="qKx-vT-Dd9" id="pJd-k6-Bvg"/>
+                        <outlet property="nameOfEvent" destination="EPJ-fC-S6g" id="s9P-3e-L7x"/>
+                        <outlet property="timeEnds" destination="akR-l2-iaI" id="X4g-Zy-1Bq"/>
+                        <outlet property="timeStarts" destination="mM5-1M-bCq" id="PNe-e8-Vfh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCk-H8-uR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3453.5999999999999" y="176.76161919040482"/>
-        </scene>
-        <!--Create Event Continued-->
-        <scene sceneID="b4c-Zq-k9Q">
-            <objects>
-                <viewController id="Ux5-yK-O4J" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="O9r-45-mhM">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bIe-EH-hf8">
-                                <rect key="frame" x="-0.5" y="276" width="375" height="200"/>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="bIe-EH-hf8" firstAttribute="centerX" secondItem="4eI-oI-4BX" secondAttribute="centerX" id="3Oc-GA-d9g"/>
-                            <constraint firstItem="bIe-EH-hf8" firstAttribute="width" secondItem="O9r-45-mhM" secondAttribute="width" id="BCO-Je-XxI"/>
-                            <constraint firstItem="bIe-EH-hf8" firstAttribute="top" secondItem="4eI-oI-4BX" secondAttribute="top" id="ztG-HN-WAp"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="4eI-oI-4BX"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Create Event Continued" id="9Kf-4U-Ko0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cAg-yK-7eH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4249" y="177"/>
         </scene>
         <!--Item-->
         <scene sceneID="vYD-i1-kwn">
