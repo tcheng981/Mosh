@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 
 class MainPageViewController: UIViewController {
-
+    
     @IBOutlet weak var createEventButton: UIButton!
     
+    let currentUser = CurrentUser()
     @IBAction func createEventButtonPushed(_ sender: UIButton) {
         self.performSegue(withIdentifier: "YourEventsToCreateEvent", sender: self)
     }

@@ -18,10 +18,9 @@ class CreateEventPageViewController: UIViewController {
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var dateStarts: UITextField!
     @IBOutlet weak var timeStarts: UITextField!
-    @IBOutlet weak var dateEnds: UITextField!
-    @IBOutlet weak var timeEnds: UITextField!
+    @IBOutlet weak var venue: UITextField!
     @IBOutlet weak var info: UITextView!
-
+    let currentUser = CurrentUser()
     
 //    ref = Database.database().reference()
     override func viewDidLoad() {
@@ -37,17 +36,25 @@ class CreateEventPageViewController: UIViewController {
     
 
     @IBAction func createEventButtonPushed(_ sender: UIButton) {
-//        let dbRef = Database.database().reference()
         guard let name = nameOfEvent.text else { return }
         guard let loc = location.text else { return }
         guard let startDate = dateStarts.text else { return }
-        guard let endDate = dateEnds.text else { return }
+        guard let venueName = venue.text else { return }
         guard let startTime = timeStarts.text else { return }
-        guard let endTime = timeEnds.text else { return }
         guard let information = info.text else { return }
+        let postDict: [String:String] = ["name": name, "location": loc, "start date": startDate, "start time": startTime, "venue name": venueName, "info": information]
+        let postRef = ref.child("Events").childByAutoId()
+        postRef.setValue(postDict)
+        let postID = postRef.key
+        currentUser.addNewMyEvent(postID: postID)
         
-        let postDict: [String:String] = ["name": name, "location": loc, "start date": startDate, "end date": endDate, "start time": startTime, "end time": endTime, "info": information]
-        self.ref.child("Events").childByAutoId().setValue(postDict)
+        //        post1Ref.setValue(post1)
+        //        var postID = postRef.key
+//        self.ref.child("Events").childByAutoId().setValue(postDict)
+        
     }
+
+    
+    //GMSServices.provideAPIKey("AIzaSyD-EgL_-KLpwNWn_5a7J9gi6EltmSyHPlQ")
 
 }
