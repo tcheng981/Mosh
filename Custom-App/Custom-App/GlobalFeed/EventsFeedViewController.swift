@@ -71,10 +71,22 @@ class EventsFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         FeedTableView.delegate = self
         updateData()
         // Do any additional setup after loading the view.
+        
+        FeedTableView.backgroundView = UIImageView(image: UIImage(named: "backgroundX.jpg"))
+        
+//        FeedTableView.backgroundView = UIImageView(image: UIImage(named: "backgroundX.jpg"))
+
+        
+//        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
+        
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
     }
     
     
@@ -83,6 +95,11 @@ class EventsFeedViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedTableCell
         let post = self.events[indexPath.row]
         cell.nameOfEvent.text = post.name
+        
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 2
+        
+        cell.backgroundColor = UIColor.clear
+
         
         return cell
     }

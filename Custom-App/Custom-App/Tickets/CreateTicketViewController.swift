@@ -17,9 +17,12 @@ class CreateTicketViewController: UIViewController {
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var preferredMethodContact: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        nameLabel.text = event?.name
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
     

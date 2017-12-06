@@ -11,5 +11,6 @@ import UIKit
 
 class FeedTableCell: UITableViewCell {
     @IBOutlet weak var nameOfEvent: UILabel!
+    @IBOutlet weak var cellView: UIView!
 }
 

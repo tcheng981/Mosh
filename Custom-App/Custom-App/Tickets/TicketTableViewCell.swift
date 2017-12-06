@@ -13,4 +13,5 @@ class TicketTableViewCell: UITableViewCell {
     var ticket: Ticket?
     @IBOutlet weak var ticketSeller: UILabel!
     @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var saleCellView: UIView!
 }

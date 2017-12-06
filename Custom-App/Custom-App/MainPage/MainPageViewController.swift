@@ -99,6 +99,7 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         eventTableView.dataSource = self
         updateData()
 //        print(self.events.count)
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,12 +111,18 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! CreateEventTableCell
         let post = self.events[indexPath.row]
         cell.nameOfEvent.text = post.name
+        
+        cell.yourEventsCell.layer.cornerRadius = cell.yourEventsCell.frame.height / 2
+        cell.backgroundColor = UIColor.clear
 
         return cell
     }

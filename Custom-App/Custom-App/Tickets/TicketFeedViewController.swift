@@ -22,6 +22,8 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
         self.ticketTableView.delegate = self
         self.ticketTableView.dataSource = self
         updateData()
+        
+        ticketTableView.backgroundView = UIImageView(image: UIImage(named: "backgroundX.jpg"))
     }
     func getTickets(user: CurrentUser, completion: @escaping ([Ticket]?) -> Void) {
         let dbRef = Database.database().reference()
@@ -77,6 +79,9 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
         return 1
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 50
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -88,6 +93,11 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.ticketSeller.text = ticket.seller
         cell.price.text = ticket.price
+        
+        cell.saleCellView.layer.cornerRadius = cell.saleCellView.frame.height / 2
+        
+        cell.backgroundColor = UIColor.clear
+        
         return cell
     }
     

@@ -11,4 +11,5 @@ import UIKit
 
 class CreateEventTableCell: UITableViewCell {
     @IBOutlet weak var nameOfEvent: UILabel!
+    @IBOutlet weak var yourEventsCell: UIView!
 }
