@@ -16,6 +16,9 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var venue: UILabel!
     @IBOutlet weak var info: UITextView!
+    @IBOutlet weak var ticketSalesButton: UIButton!
+    @IBOutlet weak var addTicketSaleButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.name.text = event?.name
@@ -25,5 +28,30 @@ class EventPageViewController: UIViewController {
         self.venue.text = event?.venue
         self.info.text = event?.info
     }
-
+    
+    @IBAction func seeTicketSalesPushed(_ sender: UIButton) {
+//        performSegue(withIdentifier: "EventToTicketSales", sender: self)
+    }
+    
+    @IBAction func addTicketSalePushed(_ sender:UIButton) {
+//        performSegue(withIdentifier: "EventToCreateTicketSale", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "EventToCreateTicketSale" {
+                if let dest = segue.destination as? CreateTicketViewController {
+                    if let e = self.event {
+                        dest.event = e;
+                    }
+                }
+            } else if identifier == "EventToTicketSales" {
+                if let dest = segue.destination as? TicketFeedViewController {
+                    if let ticket = self.event {
+                        dest.event = ticket
+                    }
+                }
+            }
+            
+        }
+    }
 }

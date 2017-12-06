@@ -11,6 +11,8 @@
 		6D4C9407C2E0C4863CAC4952 /* Pods_Custom_AppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D14DDD4FABD4FDDBB55B27BC /* Pods_Custom_AppUITests.framework */; };
 		9A53283530C1DC02A4F02A81 /* Pods_Custom_AppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD38B980F76BFBAD09A76F72 /* Pods_Custom_AppTests.framework */; };
 		AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */; };
+		AB123BF01FD7B3AB00A2631A /* CreateTicketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB123BEF1FD7B3AB00A2631A /* CreateTicketViewController.swift */; };
+		AB123BF21FD7B3B900A2631A /* TicketFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB123BF11FD7B3B900A2631A /* TicketFeedViewController.swift */; };
 		AB33240F1FD09B630068C5C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC881FCFF53A009A0CF7 /* GoogleService-Info.plist */; };
 		AB33AA571FD50CD7003E9CC4 /* CreateEventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */; };
 		AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */; };
@@ -55,6 +57,8 @@
 		66643122B91CD60CCF113307 /* Pods-Custom-AppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppTests/Pods-Custom-AppTests.release.xcconfig"; sourceTree = "<group>"; };
 		A6E289AB57227B7C170F0629 /* Pods-Custom-AppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Custom-AppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Custom-AppUITests/Pods-Custom-AppUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AB0EA3501FD37BD100DEB13A /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		AB123BEF1FD7B3AB00A2631A /* CreateTicketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTicketViewController.swift; sourceTree = "<group>"; };
+		AB123BF11FD7B3B900A2631A /* TicketFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketFeedViewController.swift; sourceTree = "<group>"; };
 		AB33AA561FD50CD7003E9CC4 /* CreateEventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventPageViewController.swift; sourceTree = "<group>"; };
 		AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		AB9C7C4A1FD74BC6007E5F3F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -129,6 +133,24 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		AB790FF71FD7B7FA00339488 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C7C4A1FD74BC6007E5F3F /* Event.swift */,
+				AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AB790FF81FD7B81200339488 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				AB123BEF1FD7B3AB00A2631A /* CreateTicketViewController.swift */,
+				AB123BF11FD7B3B900A2631A /* TicketFeedViewController.swift */,
+			);
+			path = Tickets;
+			sourceTree = "<group>";
+		};
 		AB9C7C541FD781DA007E5F3F /* GlobalFeed */ = {
 			isa = PBXGroup;
 			children = (
@@ -163,16 +185,16 @@
 		ABEDCC561FCFE6A6009A0CF7 /* Custom-App */ = {
 			isa = PBXGroup;
 			children = (
+				AB790FF81FD7B81200339488 /* Tickets */,
+				AB790FF71FD7B7FA00339488 /* Model */,
 				AB9C7C541FD781DA007E5F3F /* GlobalFeed */,
-				AB33AA5C1FD51CD4003E9CC4 /* MainPage */,
-				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
-				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
 				ABEDCC871FCFF0F5009A0CF7 /* Authentication */,
+				AB33AA5C1FD51CD4003E9CC4 /* MainPage */,
+				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
 				AB9C7C551FD78257007E5F3F /* EventPageViewController.swift */,
+				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
 				ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */,
 				ABEDCC601FCFE6A6009A0CF7 /* LaunchScreen.storyboard */,
-				AB9C7C4A1FD74BC6007E5F3F /* Event.swift */,
-				AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */,
 				ABEDCC631FCFE6A6009A0CF7 /* Info.plist */,
 				ABEDCC881FCFF53A009A0CF7 /* GoogleService-Info.plist */,
 			);
@@ -527,6 +549,7 @@
 				ABEDCC8B1FCFFCBB009A0CF7 /* LoginViewController.swift in Sources */,
 				AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */,
 				AB33AA571FD50CD7003E9CC4 /* CreateEventPageViewController.swift in Sources */,
+				AB123BF01FD7B3AB00A2631A /* CreateTicketViewController.swift in Sources */,
 				AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */,
 				AB9C7C561FD78257007E5F3F /* EventPageViewController.swift in Sources */,
 				AB9C7C4B1FD74BC6007E5F3F /* Event.swift in Sources */,
@@ -534,6 +557,7 @@
 				AB9C7C511FD77823007E5F3F /* EventsFeedViewController.swift in Sources */,
 				AB9C7C4D1FD7512F007E5F3F /* CurrentUser.swift in Sources */,
 				ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */,
+				AB123BF21FD7B3B900A2631A /* TicketFeedViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

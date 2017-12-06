@@ -36,22 +36,22 @@ class CreateEventPageViewController: UIViewController {
     
 
     @IBAction func createEventButtonPushed(_ sender: UIButton) {
+        let postRef = ref.child("Events").childByAutoId()
+        let postID = postRef.key
+        
         guard let name = nameOfEvent.text else { return }
         guard let loc = location.text else { return }
         guard let startDate = dateStarts.text else { return }
         guard let venueName = venue.text else { return }
         guard let startTime = timeStarts.text else { return }
         guard let information = info.text else { return }
-        let postDict: [String:String] = ["name": name, "location": loc, "start date": startDate, "start time": startTime, "venue name": venueName, "info": information]
+        let postDict: [String:String] = ["id": postID, "name": name, "location": loc, "start date": startDate, "start time": startTime, "venue name": venueName, "info": information]
         
-        let postRef = ref.child("Events").childByAutoId()
+        
         postRef.setValue(postDict)
-        let postID = postRef.key
+        
         ref.child("All Events").childByAutoId().setValue(postID)
         currentUser.addNewMyEvent(postID: postID)
-        //        post1Ref.setValue(post1)
-        //        var postID = postRef.key
-//        self.ref.child("Events").childByAutoId().setValue(postDict)
         
     }
 

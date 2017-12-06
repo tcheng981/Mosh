@@ -137,6 +137,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="nameOfEvent" destination="DDH-s6-34o" id="IiH-Vv-cSg"/>
+                                    <segue destination="eJy-wA-8sE" kind="show" identifier="YourEventsToEventPage" trigger="accessoryAction" id="kv9-Pd-hAF"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -283,6 +284,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VrF-ph-EmA">
+                                <rect key="frame" x="53" y="540" width="113" height="30"/>
+                                <state key="normal" title="See Ticket Sales">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="seeTicketSalesPushed:" destination="eJy-wA-8sE" eventType="touchUpInside" id="M5G-ln-9wP"/>
+                                    <segue destination="Ks5-AL-PuP" kind="show" identifier="EventToTicketSales" id="dgU-V6-yfe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dU-Mu-vKq">
+                                <rect key="frame" x="206" y="540" width="107" height="30"/>
+                                <state key="normal" title="Add Ticket Sale">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addTicketSalePushed:" destination="eJy-wA-8sE" eventType="touchUpInside" id="ncd-Hv-GbA"/>
+                                    <segue destination="Qa4-RX-gqS" kind="show" identifier="EventToCreateTicketSale" id="2pO-Rw-b1m"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -293,8 +314,12 @@
                             <constraint firstItem="WYT-bR-C3O" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="Jhh-0w-ThR"/>
                             <constraint firstItem="goF-TZ-KEo" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="POF-9M-6J1"/>
                             <constraint firstItem="qQq-0f-1Jo" firstAttribute="top" secondItem="goF-TZ-KEo" secondAttribute="bottom" constant="2" id="Rbw-cX-dpj"/>
+                            <constraint firstItem="VrF-ph-EmA" firstAttribute="leading" secondItem="f9e-lq-Qcn" secondAttribute="leading" constant="53" id="Z2x-lA-1Ii"/>
                             <constraint firstItem="qQq-0f-1Jo" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="Zos-13-6d6"/>
+                            <constraint firstItem="f9e-lq-Qcn" firstAttribute="trailing" secondItem="5dU-Mu-vKq" secondAttribute="trailing" constant="62" id="aHi-3I-av2"/>
                             <constraint firstItem="K60-Dp-OZr" firstAttribute="top" secondItem="qQq-0f-1Jo" secondAttribute="bottom" constant="27" id="doV-lN-15E"/>
+                            <constraint firstItem="f9e-lq-Qcn" firstAttribute="bottom" secondItem="5dU-Mu-vKq" secondAttribute="bottom" constant="48" id="eB8-T7-nec"/>
+                            <constraint firstItem="f9e-lq-Qcn" firstAttribute="bottom" secondItem="VrF-ph-EmA" secondAttribute="bottom" constant="48" id="hUj-IW-O3f"/>
                             <constraint firstItem="wXH-l6-kOS" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="iLg-xF-XzW"/>
                             <constraint firstItem="goF-TZ-KEo" firstAttribute="top" secondItem="wXH-l6-kOS" secondAttribute="bottom" constant="8" id="tYX-CP-ZZ5"/>
                             <constraint firstItem="K60-Dp-OZr" firstAttribute="width" secondItem="dW8-gy-5jT" secondAttribute="width" id="x1K-dG-8OK"/>
@@ -313,7 +338,101 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ak0-If-evd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3708" y="294.60269865067471"/>
+            <point key="canvasLocation" x="3500" y="629"/>
+        </scene>
+        <!--Create Ticket Sale-->
+        <scene sceneID="6pj-4D-84c">
+            <objects>
+                <viewController id="Qa4-RX-gqS" customClass="CreateTicketViewController" customModule="Custom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g2f-Qf-fTm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3N-Va-7Hj">
+                                <rect key="frame" x="129.5" y="99" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05d-NH-bJ1">
+                                <rect key="frame" x="168" y="150" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqk-wa-YNd">
+                                <rect key="frame" x="143.5" y="303" width="88" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tlg-dk-UOs">
+                                <rect key="frame" x="0.0" y="179" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" text="Description of what you're selling" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hdN-uS-QTX">
+                                <rect key="frame" x="0.0" y="332" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e98-3f-RzR">
+                                <rect key="frame" x="157" y="534" width="61" height="30"/>
+                                <state key="normal" title="Add Sale">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addButtonPushed:" destination="Qa4-RX-gqS" eventType="touchUpInside" id="Crf-Ko-5Pl"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="iqk-wa-YNd" firstAttribute="top" secondItem="tlg-dk-UOs" secondAttribute="bottom" constant="94" id="1kU-km-M6T"/>
+                            <constraint firstItem="tlg-dk-UOs" firstAttribute="width" secondItem="g2f-Qf-fTm" secondAttribute="width" id="4kZ-2x-OTI"/>
+                            <constraint firstItem="iqk-wa-YNd" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="7gi-pU-MpL"/>
+                            <constraint firstItem="hdN-uS-QTX" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="BXy-st-443"/>
+                            <constraint firstItem="j3N-Va-7Hj" firstAttribute="top" secondItem="JUP-hP-ReG" secondAttribute="top" constant="35" id="HA8-fr-kDb"/>
+                            <constraint firstItem="hdN-uS-QTX" firstAttribute="width" secondItem="g2f-Qf-fTm" secondAttribute="width" id="SsI-kO-Ayy"/>
+                            <constraint firstItem="tlg-dk-UOs" firstAttribute="top" secondItem="05d-NH-bJ1" secondAttribute="bottom" constant="8" id="TOs-oK-Q8Z"/>
+                            <constraint firstItem="05d-NH-bJ1" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="bni-bv-Hrb"/>
+                            <constraint firstItem="e98-3f-RzR" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="boS-Uf-Wg0"/>
+                            <constraint firstItem="j3N-Va-7Hj" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="dk9-av-SFr"/>
+                            <constraint firstItem="tlg-dk-UOs" firstAttribute="centerX" secondItem="JUP-hP-ReG" secondAttribute="centerX" id="fKV-zw-Wcn"/>
+                            <constraint firstItem="hdN-uS-QTX" firstAttribute="top" secondItem="iqk-wa-YNd" secondAttribute="bottom" constant="8" id="rVr-Ad-ZIh"/>
+                            <constraint firstItem="JUP-hP-ReG" firstAttribute="bottom" secondItem="e98-3f-RzR" secondAttribute="bottom" constant="54" id="u2F-3t-X6w"/>
+                            <constraint firstItem="05d-NH-bJ1" firstAttribute="top" secondItem="j3N-Va-7Hj" secondAttribute="bottom" constant="30" id="z5h-mD-3gg"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JUP-hP-ReG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Create Ticket Sale" id="Wjx-ex-9Gw"/>
+                    <connections>
+                        <outlet property="addButton" destination="e98-3f-RzR" id="XEd-VH-opo"/>
+                        <outlet property="info" destination="hdN-uS-QTX" id="jHs-ed-xoe"/>
+                        <outlet property="price" destination="tlg-dk-UOs" id="uUS-dP-xC6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-6Y-gkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4281" y="285"/>
+        </scene>
+        <!--Ticket Feed-->
+        <scene sceneID="FEH-I5-1SM">
+            <objects>
+                <viewController id="Ks5-AL-PuP" customClass="TicketFeedViewController" customModule="Custom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JYL-IM-gl7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="fP0-ng-ULQ"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Ticket Feed" id="6aY-Lf-diK"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oIt-gr-22r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4281" y="1072"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="qEX-Rv-fLg">
@@ -431,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCk-H8-uR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3498" y="1003"/>
+            <point key="canvasLocation" x="2716" y="1744"/>
         </scene>
         <!--Item-->
         <scene sceneID="vYD-i1-kwn">
@@ -617,5 +736,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="kkM-O1-0Sb"/>
+        <segue reference="kv9-Pd-hAF"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -16,6 +16,7 @@ class Event: NSObject {
     var timeStarts: String
     var venue: String
     var info: String
+    var ID: String?
     
     
     init(name: String, location: String, dateStarts: String, timeStarts: String, venue: String, info: String) {
@@ -34,5 +35,8 @@ class Event: NSObject {
             self.timeStarts = timeStarts
             self.venue = venue
             self.info = info
+    }
+    func updateID(id: String) {
+        self.ID = id
     }
 }

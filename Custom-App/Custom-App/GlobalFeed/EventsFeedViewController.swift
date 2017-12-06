@@ -28,17 +28,16 @@ class EventsFeedViewController: UIViewController, UITableViewDelegate, UITableVi
                         for eventKey in posts.keys {
                             let post = posts[eventKey]
                             let name = post!["name"] as! String
-//                            print(name)
                             let location = post!["location"] as! String
                             let dateStarts = post!["start date"] as! String
                             let timeStarts = post!["start time"] as! String
-                            //                            print(timeStarts)
                             let venue = post!["venue name"] as! String
                             let info = post!["info"] as! String
+                            let eventID = post!["id"] as! String
                             let event = Event(name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
+                            event.updateID(id: eventID)
                             EventArray.append(event)
                             self.events.append(event)
-                            //                            postArray.append(Post(id: postKey, username: username, postImagePath: imagePath, thread: thread, timeInterval: timestamp, read: read))
                         }
 //                        print(self.events.count)
                         completion(EventArray)
