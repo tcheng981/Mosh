@@ -27,6 +27,7 @@ class EventPageViewController: UIViewController {
         self.startDate.text = event?.dateStarts
         self.venue.text = event?.venue
         self.info.text = event?.info
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
     
     @IBAction func seeTicketSalesPushed(_ sender: UIButton) {

@@ -26,7 +26,7 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
             if snapshot.exists() {
                 if let posts = snapshot.value as? [String:AnyObject] {
                     user.getMyEventsID(completion: { (ids) in
-                        for eventKey in posts.keys {
+                        for eventKey in ids {
                             let post = posts[eventKey]
                             print(self.currentUser.id!)
                             let name = post!["name"] as! String

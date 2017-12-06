@@ -27,6 +27,7 @@ class CreateEventPageViewController: UIViewController {
         super.viewDidLoad()
         self.info.isScrollEnabled = false
         // Do any additional setup after loading the view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
 
     override func didReceiveMemoryWarning() {
