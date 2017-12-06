@@ -120,14 +120,36 @@
         <scene sceneID="1pY-W7-q95">
             <objects>
                 <viewController id="rfu-cl-iri" customClass="MainPageViewController" customModule="Custom_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <navigationBar key="view" contentMode="scaleToFill" id="aIS-A2-Fgp">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="K1L-rz-gor">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                        <items>
-                            <navigationItem title="Title" id="YIJ-63-hCd"/>
-                        </items>
-                    </navigationBar>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="vDz-OX-771" customClass="CreateEventTableCell" customModule="Custom_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vDz-OX-771" id="Epb-t3-cLF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDH-s6-34o">
+                                            <rect key="frame" x="16" y="11" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="DDH-s6-34o" firstAttribute="leading" secondItem="Epb-t3-cLF" secondAttribute="leading" constant="16" id="Wfg-Gk-CMD"/>
+                                        <constraint firstItem="DDH-s6-34o" firstAttribute="centerY" secondItem="Epb-t3-cLF" secondAttribute="centerY" id="j83-Yt-inl"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameOfEvent" destination="DDH-s6-34o" id="IiH-Vv-cSg"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Your Saved Events" id="07f-0R-i3N">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="tIG-zv-kue">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GPb-DZ-ioi">
@@ -145,6 +167,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="createEventButton" destination="GPb-DZ-ioi" id="Cuy-QC-O74"/>
+                        <outlet property="eventTableView" destination="K1L-rz-gor" id="siW-Gb-xV2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYJ-fb-TvR" userLabel="First Responder" sceneMemberID="firstResponder"/>

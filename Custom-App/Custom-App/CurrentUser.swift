@@ -24,4 +24,22 @@ class CurrentUser {
     func addNewMyEvent(postID: String) {
         dbRef.child("Users/\(self.id!)/myEvents").childByAutoId().setValue(postID)
     }
+    func getMyEventsID(completion: @escaping ([String]) -> Void) {
+        var eventArray: [String] = []
+        dbRef.child("Users/\(id!)/myEvents").observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() {
+                if let posts = snapshot.value as? [String:AnyObject] {
+                    for key in posts.keys {
+                        eventArray.append(posts[key] as! String)
+                    }
+                    completion(eventArray)
+                } else {
+                    completion([])
+                }
+            } else {
+                completion([])
+            }
+        })
+    }
+
 }
