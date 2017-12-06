@@ -952,7 +952,6 @@
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="e1B-Wi-ZvV"/>
                                     <action selector="signUpPressed:" destination="1N5-b7-XsF" eventType="touchUpInside" id="TjR-LU-kuK"/>
-                                    <segue destination="1GJ-NO-Bwr" kind="show" identifier="SignUpToMain" id="kkM-O1-0Sb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1000,6 +999,7 @@
                         <outlet property="nameTextField" destination="gNE-lE-L9q" id="kfP-td-5dX"/>
                         <outlet property="passwordTextField" destination="RYh-EN-roc" id="EfO-D7-O2c"/>
                         <outlet property="passwordVerificationTextField" destination="dJl-bn-0nt" id="EaO-H7-peG"/>
+                        <segue destination="1GJ-NO-Bwr" kind="show" identifier="SignUpToMain" id="VsJ-Vs-rBO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIV-kU-UvK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1011,7 +1011,7 @@
         <image name="moshlogo" width="2040" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kkM-O1-0Sb"/>
+        <segue reference="VsJ-Vs-rBO"/>
         <segue reference="kv9-Pd-hAF"/>
     </inferredMetricsTieBreakers>
 </document>
