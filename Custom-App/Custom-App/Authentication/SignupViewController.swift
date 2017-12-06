@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import FirebaseDatabase
 class SignupViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -16,6 +16,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var passwordVerificationTextField: UITextField!
     
+    var ref = Database.database().reference()
     var userEmail = ""
     var userName = ""
     var userPassword = ""
@@ -40,6 +41,8 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
                     changeReq.commitChanges(completion:
                         { (err) in
                     })
+//                    ref.child("Ticket Feeds").child((self.event?.ID!)!).childByAutoId().setValue(ticketDict)
+//                    self.ref.child("Users").
                     let alertController = UIAlertController(title: "Congratulations!", message: "You have successfully signed up", preferredStyle: .alert)
                     alertController.addAction(UIAlertAction(title: "Okay", style: .default, handler:
                         {

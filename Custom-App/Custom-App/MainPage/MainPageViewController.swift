@@ -22,20 +22,27 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         var EventArray: [Event] = []
     
         dbRef.child("Events").observeSingleEvent(of: .value, with: { snapshot -> Void in
+//        dbRef.child("Users").child(self.currentUser.id!).child("myEvents").observeSingleEvent(of: .value, with: { snapshot -> Void in
             if snapshot.exists() {
                 if let posts = snapshot.value as? [String:AnyObject] {
                     user.getMyEventsID(completion: { (ids) in
                         for eventKey in posts.keys {
                             let post = posts[eventKey]
+                            print(self.currentUser.id!)
                             let name = post!["name"] as! String
                             let location = post!["location"] as! String
                             let dateStarts = post!["start date"] as! String
                             let timeStarts = post!["start time"] as! String
                             let venue = post!["venue name"] as! String
                             let info = post!["info"] as! String
-                            let eventID = post!["id"] as! String
                             let event = Event(name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
-                            event.updateID(id: eventID)
+                            DispatchQueue.main.async {
+                                let eventID = post!["id"] as! String
+                                event.updateID(id: eventID)
+                            }
+                            
+                            
+                            
                             EventArray.append(event)
                             self.events.append(event)
 
