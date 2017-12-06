@@ -68,7 +68,6 @@
                                 </state>
                                 <connections>
                                     <action selector="logInPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IRS-tT-msU"/>
-                                    <segue destination="1GJ-NO-Bwr" kind="show" identifier="LogInToMain" id="Ncg-zb-8Rq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -101,6 +100,7 @@
                     <connections>
                         <outlet property="emailTextField" destination="50h-GU-2UJ" id="Ith-Rh-M5k"/>
                         <outlet property="passwordTextField" destination="fg5-Ii-83u" id="MD6-Kk-oh4"/>
+                        <segue destination="1GJ-NO-Bwr" kind="show" identifier="LogInToMain" id="diC-RA-pXl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -932,7 +932,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Ncg-zb-8Rq"/>
-        <segue reference="kv9-Pd-hAF"/>
+        <segue reference="diC-RA-pXl"/>
+        <segue reference="4Zc-a1-w0h"/>
     </inferredMetricsTieBreakers>
 </document>
