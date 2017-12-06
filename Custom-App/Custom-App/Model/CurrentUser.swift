@@ -58,6 +58,21 @@ class CurrentUser {
             }
         })
     }
-
-
+    func getTicketFeed(eventID: String, completion: @escaping ([String]) -> Void) {
+        var ticketArray: [String] = []
+        dbRef.child("Ticket IDs").child(eventID).observeSingleEvent(of: .value, with: { (snapshot) in
+            if snapshot.exists() {
+                if let tickets = snapshot.value as? [String:AnyObject] {
+                    for key in tickets.keys {
+                        ticketArray.append(tickets[key] as! String)
+                    }
+                    completion(ticketArray)
+                } else {
+                    completion([])
+                }
+            } else {
+                completion([])
+            }
+        })
+    }
 }

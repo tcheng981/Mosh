@@ -16,6 +16,7 @@ class CreateTicketViewController: UIViewController {
     @IBOutlet weak var price: UITextField!
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var addButton: UIButton!
+    @IBOutlet weak var preferredMethodContact: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,10 +24,15 @@ class CreateTicketViewController: UIViewController {
     }
     
     @IBAction func addButtonPushed(_ sender: UIButton) {
+        let ticketRef = ref.child("Ticket").childByAutoId()
+        let ticketID = ticketRef.key
         guard let ticketPrice = self.price.text else { return }
         guard let information = self.info.text else { return }
-        let ticketDict: [String: String] = ["price": ticketPrice, "info": information]
-        ref.child("Ticket Feeds").child((self.event?.ID!)!).childByAutoId().setValue(ticketDict)
+        guard let contactInfo = self.preferredMethodContact.text else { return }
+        let seller = CurrentUser().username
+        let ticketDict: [String: String] = ["seller name": seller!, "contact": contactInfo, "price": ticketPrice, "info": information]
+        ticketRef.setValue(ticketDict)
+        ref.child("Ticket IDs").child((self.event?.ID!)!).childByAutoId().setValue(ticketID)
     }
 
 }
