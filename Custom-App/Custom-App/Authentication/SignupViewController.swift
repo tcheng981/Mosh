@@ -73,6 +73,7 @@ class SignupViewController: UIViewController, UITextFieldDelegate {
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
         self.passwordVerificationTextField.delegate = self
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

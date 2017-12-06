@@ -51,12 +51,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.emailTextField.delegate = self
         self.passwordTextField.delegate = self
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundX.jpg")!)
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "LogInToMain", sender: self)
-        }
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "LogInToMain", sender: self)
+//        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
