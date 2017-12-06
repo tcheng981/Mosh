@@ -53,7 +53,7 @@ class CreateEventPageViewController: UIViewController {
         
         ref.child("All Events").childByAutoId().setValue(postID)
         currentUser.addNewMyEvent(postID: postID)
-        
+        self.performSegue(withIdentifier: "unwindToMainPage", sender: self)
     }
 
     

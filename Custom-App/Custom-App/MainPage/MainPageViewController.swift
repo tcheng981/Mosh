@@ -17,6 +17,11 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
     let currentUser = CurrentUser()
     var chosenEvent: Event?
 //    var eventPostings: [Event]
+    
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
+        updateData()
+    }
+    
     func getPosts(user: CurrentUser, completion: @escaping ([Event]?) -> Void) {
         let dbRef = Database.database().reference()
         var EventArray: [Event] = []

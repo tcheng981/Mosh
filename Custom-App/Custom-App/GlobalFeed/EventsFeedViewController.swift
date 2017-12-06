@@ -17,6 +17,10 @@ class EventsFeedViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var FeedTableView: UITableView!
     var chosenEvent: Event?
     
+    @IBAction func unwindSegues(_ sender: UIStoryboardSegue) {
+        updateData()
+    }
+    
     func getAllPosts(user: CurrentUser, completion: @escaping ([Event]?) -> Void) {
         let dbRef = Database.database().reference()
         var EventArray: [Event] = []

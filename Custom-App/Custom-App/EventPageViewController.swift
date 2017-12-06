@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
 class EventPageViewController: UIViewController {
     var event: Event?
@@ -18,6 +20,15 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var info: UITextView!
     @IBOutlet weak var ticketSalesButton: UIButton!
     @IBOutlet weak var addTicketSaleButton: UIButton!
+    @IBOutlet weak var addToMyEventsButton: UIButton!
+    @IBAction func unwindSegue(_ sender: UIStoryboardSegue) {
+        
+    }
+    @IBAction func addToEventsButtonPushed(_ sender: UIButton) {
+        let currentUser = CurrentUser()
+        currentUser.addNewMyEvent(postID: (self.event?.ID)!)
+        self.performSegue(withIdentifier: "unwindToPrevious", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,4 +66,8 @@ class EventPageViewController: UIViewController {
             
         }
     }
+
+    
+
+    
 }

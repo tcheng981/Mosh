@@ -36,7 +36,7 @@
                                 </constraints>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFB-CF-Zw8">
                                 <rect key="frame" x="38" y="431" width="66" height="18"/>
@@ -308,6 +308,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O9o-6J-yCh">
+                                <rect key="frame" x="126" y="572" width="123" height="30"/>
+                                <state key="normal" title="Add To My Events">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addToEventsButtonPushed:" destination="eJy-wA-8sE" eventType="touchUpInside" id="l6E-ia-DB4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -316,6 +325,7 @@
                             <constraint firstItem="S1O-Ge-VlU" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="8wp-hj-bSw"/>
                             <constraint firstItem="qQq-0f-1Jo" firstAttribute="top" secondItem="S1O-Ge-VlU" secondAttribute="bottom" constant="5" id="DoJ-Jv-Idz"/>
                             <constraint firstItem="VrF-ph-EmA" firstAttribute="leading" secondItem="f9e-lq-Qcn" secondAttribute="leading" constant="38" id="G4Y-QP-fqE"/>
+                            <constraint firstItem="f9e-lq-Qcn" firstAttribute="bottom" secondItem="O9o-6J-yCh" secondAttribute="bottom" constant="16" id="IiD-oC-KLs"/>
                             <constraint firstItem="f9e-lq-Qcn" firstAttribute="bottom" secondItem="5dU-Mu-vKq" secondAttribute="bottom" constant="48" id="JVS-dn-Zag"/>
                             <constraint firstItem="wXH-l6-kOS" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="LKr-62-USZ"/>
                             <constraint firstItem="wXH-l6-kOS" firstAttribute="top" secondItem="goF-TZ-KEo" secondAttribute="bottom" constant="5" id="NX4-xQ-pg0"/>
@@ -324,6 +334,7 @@
                             <constraint firstItem="wXH-l6-kOS" firstAttribute="top" secondItem="goF-TZ-KEo" secondAttribute="bottom" constant="5" id="RhV-nR-SIh"/>
                             <constraint firstItem="S1O-Ge-VlU" firstAttribute="top" secondItem="wXH-l6-kOS" secondAttribute="bottom" constant="5" id="SCp-Wc-TNe"/>
                             <constraint firstItem="f9e-lq-Qcn" firstAttribute="trailing" secondItem="5dU-Mu-vKq" secondAttribute="trailing" constant="38" id="Soi-23-5Ph"/>
+                            <constraint firstItem="O9o-6J-yCh" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="Y8t-pz-XYe"/>
                             <constraint firstItem="5dU-Mu-vKq" firstAttribute="leading" secondItem="VrF-ph-EmA" secondAttribute="trailing" constant="79" id="Zgb-ro-aZS"/>
                             <constraint firstItem="qQq-0f-1Jo" firstAttribute="top" secondItem="S1O-Ge-VlU" secondAttribute="bottom" constant="5" id="bMt-WT-MH1"/>
                             <constraint firstItem="goF-TZ-KEo" firstAttribute="centerX" secondItem="f9e-lq-Qcn" secondAttribute="centerX" id="c6q-lM-WeO"/>
@@ -340,15 +351,18 @@
                         <viewLayoutGuide key="safeArea" id="f9e-lq-Qcn"/>
                     </view>
                     <connections>
+                        <outlet property="addToMyEventsButton" destination="O9o-6J-yCh" id="Pwm-ii-7Z2"/>
                         <outlet property="info" destination="K60-Dp-OZr" id="HUP-no-oZP"/>
                         <outlet property="location" destination="wXH-l6-kOS" id="k3A-sO-08b"/>
                         <outlet property="name" destination="WYT-bR-C3O" id="IFA-WN-cZ8"/>
                         <outlet property="startDate" destination="goF-TZ-KEo" id="ELn-I6-uBS"/>
                         <outlet property="startTime" destination="qQq-0f-1Jo" id="9OG-7g-DWi"/>
                         <outlet property="venue" destination="S1O-Ge-VlU" id="8pg-Vi-ORm"/>
+                        <segue destination="bZ5-sg-fMa" kind="unwind" identifier="unwindToPrevious" unwindAction="unwindSegue:" id="lUi-ki-lVo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ak0-If-evd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="bZ5-sg-fMa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3500" y="629"/>
         </scene>
@@ -406,10 +420,11 @@
                                 </state>
                                 <connections>
                                     <action selector="addButtonPushed:" destination="Qa4-RX-gqS" eventType="touchUpInside" id="Crf-Ko-5Pl"/>
+                                    <segue destination="Br7-HV-ZEf" kind="unwind" unwindAction="unwindSegue:" id="acA-Wg-f7P"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-6y-Yec">
-                                <rect key="frame" x="166" y="403" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftH-6y-Yec">
+                                <rect key="frame" x="166" y="403" width="153" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -453,9 +468,11 @@
                         <outlet property="info" destination="hdN-uS-QTX" id="jHs-ed-xoe"/>
                         <outlet property="preferredMethodContact" destination="93s-Pr-ggY" id="yN9-oc-hEK"/>
                         <outlet property="price" destination="tlg-dk-UOs" id="uUS-dP-xC6"/>
+                        <segue destination="Br7-HV-ZEf" kind="unwind" identifier="unwindTowardsViewController" unwindAction="unwindSegue:" id="flo-rq-kRc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u9N-6Y-gkG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Br7-HV-ZEf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4281" y="285"/>
         </scene>
@@ -698,6 +715,7 @@
                                         </state>
                                         <connections>
                                             <action selector="createEventButtonPushed:" destination="7XJ-x1-etm" eventType="touchUpInside" id="qxH-1X-ZTD"/>
+                                            <segue destination="s4E-iU-mGq" kind="unwind" unwindAction="unwindSegue:" id="B92-8W-GKj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -722,9 +740,11 @@
                         <outlet property="nameOfEvent" destination="EPJ-fC-S6g" id="s9P-3e-L7x"/>
                         <outlet property="timeStarts" destination="mM5-1M-bCq" id="PNe-e8-Vfh"/>
                         <outlet property="venue" destination="Xr7-OA-4qs" id="dGC-yR-kwf"/>
+                        <segue destination="s4E-iU-mGq" kind="unwind" identifier="unwindToMainPage" unwindAction="unwindSegue:" id="d9b-bs-xZ7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hCk-H8-uR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="s4E-iU-mGq" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2716" y="1744"/>
         </scene>
@@ -912,7 +932,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="kkM-O1-0Sb"/>
-        <segue reference="4Zc-a1-w0h"/>
+        <segue reference="Ncg-zb-8Rq"/>
+        <segue reference="kv9-Pd-hAF"/>
     </inferredMetricsTieBreakers>
 </document>
