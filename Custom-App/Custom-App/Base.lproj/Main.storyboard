@@ -497,6 +497,7 @@
                                         <connections>
                                             <outlet property="price" destination="yIw-yI-wc8" id="9jT-P1-uVc"/>
                                             <outlet property="ticketSeller" destination="n0K-Vm-k7Y" id="Ekc-0s-J0q"/>
+                                            <segue destination="rnc-T6-xXt" kind="show" identifier="TicketFeedToTicketPage" trigger="accessoryAction" id="xx8-YL-oak"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -519,6 +520,72 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oIt-gr-22r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4281" y="1072"/>
+        </scene>
+        <!--Ticket Page View Controller-->
+        <scene sceneID="Y9X-ts-ArU">
+            <objects>
+                <viewController id="rnc-T6-xXt" customClass="TicketPageViewController" customModule="Custom_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Jrm-dD-zZW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Of Seller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lva-HE-gXV">
+                                <rect key="frame" x="129" y="148" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2A-0W-8Dp">
+                                <rect key="frame" x="129.5" y="108" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="myj-pa-May">
+                                <rect key="frame" x="168" y="189" width="39" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="contactInfo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO7-UE-bNS">
+                                <rect key="frame" x="143" y="223" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-Eh-cnO">
+                                <rect key="frame" x="-0.5" y="280" width="375" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.12683237980000001" green="0.35413669019999999" blue="0.67419495559999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="cO7-UE-bNS" firstAttribute="top" secondItem="myj-pa-May" secondAttribute="bottom" constant="13" id="2du-wv-uHZ"/>
+                            <constraint firstItem="myj-pa-May" firstAttribute="top" secondItem="lva-HE-gXV" secondAttribute="bottom" constant="20" id="4kz-dT-f2g"/>
+                            <constraint firstItem="qHc-Eh-cnO" firstAttribute="top" secondItem="cO7-UE-bNS" secondAttribute="bottom" constant="36" id="4wv-Ne-8Dg"/>
+                            <constraint firstItem="qHc-Eh-cnO" firstAttribute="width" secondItem="Jrm-dD-zZW" secondAttribute="width" id="Kvk-E1-JlK"/>
+                            <constraint firstItem="qHc-Eh-cnO" firstAttribute="centerX" secondItem="fRQ-VC-fta" secondAttribute="centerX" id="M12-RZ-dOD"/>
+                            <constraint firstItem="D2A-0W-8Dp" firstAttribute="centerX" secondItem="fRQ-VC-fta" secondAttribute="centerX" id="aEs-iX-CwA"/>
+                            <constraint firstItem="D2A-0W-8Dp" firstAttribute="top" secondItem="fRQ-VC-fta" secondAttribute="top" id="jM5-hO-Lpi"/>
+                            <constraint firstItem="lva-HE-gXV" firstAttribute="top" secondItem="D2A-0W-8Dp" secondAttribute="bottom" constant="19" id="vhq-Jt-j7W"/>
+                            <constraint firstItem="lva-HE-gXV" firstAttribute="centerX" secondItem="fRQ-VC-fta" secondAttribute="centerX" id="yfN-ju-H64"/>
+                            <constraint firstItem="myj-pa-May" firstAttribute="centerX" secondItem="fRQ-VC-fta" secondAttribute="centerX" id="yjV-SH-Rvf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fRQ-VC-fta"/>
+                    </view>
+                    <connections>
+                        <outlet property="contactInfo" destination="cO7-UE-bNS" id="RzQ-30-feC"/>
+                        <outlet property="info" destination="qHc-Eh-cnO" id="MjP-el-mf1"/>
+                        <outlet property="nameOfEvent" destination="D2A-0W-8Dp" id="gxa-CR-lig"/>
+                        <outlet property="price" destination="myj-pa-May" id="aKO-7m-A3G"/>
+                        <outlet property="seller" destination="lva-HE-gXV" id="2p5-bm-YOY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TCY-Ih-NuE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5012" y="1072"/>
         </scene>
         <!--Create Event-->
         <scene sceneID="qEX-Rv-fLg">

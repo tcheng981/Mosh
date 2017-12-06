@@ -18,6 +18,7 @@
 		AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */; };
 		AB3F6C2C1FD7E4BB0008A1F2 /* TicketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3F6C2B1FD7E4BB0008A1F2 /* TicketTableViewCell.swift */; };
 		AB3F6C2E1FD7E70D0008A1F2 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3F6C2D1FD7E70D0008A1F2 /* Ticket.swift */; };
+		AB3F6C301FD7FD0B0008A1F2 /* TicketPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3F6C2F1FD7FD0B0008A1F2 /* TicketPageViewController.swift */; };
 		AB9C7C4B1FD74BC6007E5F3F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4A1FD74BC6007E5F3F /* Event.swift */; };
 		AB9C7C4D1FD7512F007E5F3F /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */; };
 		AB9C7C4F1FD77180007E5F3F /* CreateEventTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4E1FD77180007E5F3F /* CreateEventTableCell.swift */; };
@@ -65,6 +66,7 @@
 		AB33AA581FD51B74003E9CC4 /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
 		AB3F6C2B1FD7E4BB0008A1F2 /* TicketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketTableViewCell.swift; sourceTree = "<group>"; };
 		AB3F6C2D1FD7E70D0008A1F2 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		AB3F6C2F1FD7FD0B0008A1F2 /* TicketPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketPageViewController.swift; sourceTree = "<group>"; };
 		AB9C7C4A1FD74BC6007E5F3F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		AB9C7C4E1FD77180007E5F3F /* CreateEventTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTableCell.swift; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 				ABEDCC871FCFF0F5009A0CF7 /* Authentication */,
 				AB33AA5C1FD51CD4003E9CC4 /* MainPage */,
 				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
+				AB3F6C2F1FD7FD0B0008A1F2 /* TicketPageViewController.swift */,
 				AB9C7C551FD78257007E5F3F /* EventPageViewController.swift */,
 				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
 				ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */,
@@ -560,6 +563,7 @@
 				AB9C7C561FD78257007E5F3F /* EventPageViewController.swift in Sources */,
 				AB3F6C2E1FD7E70D0008A1F2 /* Ticket.swift in Sources */,
 				AB3F6C2C1FD7E4BB0008A1F2 /* TicketTableViewCell.swift in Sources */,
+				AB3F6C301FD7FD0B0008A1F2 /* TicketPageViewController.swift in Sources */,
 				AB9C7C4B1FD74BC6007E5F3F /* Event.swift in Sources */,
 				AB9C7C531FD77FA6007E5F3F /* FeedTableCell.swift in Sources */,
 				AB9C7C511FD77823007E5F3F /* EventsFeedViewController.swift in Sources */,

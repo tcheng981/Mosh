@@ -29,8 +29,9 @@ class CreateTicketViewController: UIViewController {
         guard let ticketPrice = self.price.text else { return }
         guard let information = self.info.text else { return }
         guard let contactInfo = self.preferredMethodContact.text else { return }
+        let nameOfEvent = self.event!.name
         let seller = CurrentUser().username
-        let ticketDict: [String: String] = ["seller name": seller!, "contact": contactInfo, "price": ticketPrice, "info": information]
+        let ticketDict: [String: String] = ["event name": nameOfEvent, "seller name": seller!, "contact": contactInfo, "price": ticketPrice, "info": information]
         ticketRef.setValue(ticketDict)
         ref.child("Ticket IDs").child((self.event?.ID!)!).childByAutoId().setValue(ticketID)
     }

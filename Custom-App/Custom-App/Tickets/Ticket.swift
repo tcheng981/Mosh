@@ -14,13 +14,14 @@ class Ticket: NSObject {
     var info: String
     var price: String
     var contactInfo: String
-//    var eventID: String
+    var eventName: String
     
-    init(seller: String, info: String, price: String, contactInfo: String) {
+    init(event: String, seller: String, info: String, price: String, contactInfo: String) {
         self.seller = seller
         self.info = info
         self.price = price
         self.contactInfo = contactInfo
+        self.eventName = event
     }
     
 }

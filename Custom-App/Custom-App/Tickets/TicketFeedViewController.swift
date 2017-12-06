@@ -14,7 +14,7 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
     var event: Event?
     @IBOutlet weak var ticketTableView: UITableView!
     let currentUser = CurrentUser()
-    var chosenEvent: Event?
+    var chosenTicket: Ticket?
     var tickets: [Ticket] = []
     
     override func viewDidLoad() {
@@ -37,8 +37,9 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
                             let information = ticketSale!["contact"]
                             let priceOfTicket = ticketSale!["price"]
                             let contactInfo = ticketSale!["info"]
+                            let eventName = ticketSale!["event name"]
 //                            let post = posts[eventKey]
-                            let ticket = Ticket(seller: sellerName as! String, info: information as! String, price: priceOfTicket as! String, contactInfo: contactInfo as! String)
+                            let ticket = Ticket(event: eventName as! String, seller: sellerName as! String, info: information as! String, price: priceOfTicket as! String, contactInfo: contactInfo as! String)
 ////                            let event = Event(name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
 //                            DispatchQueue.main.async {
 //                                let eventID = post!["id"] as! String
@@ -84,6 +85,7 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
 //        cell.nameOfEvent.text = post.name
         let ticket = self.tickets[indexPath.row]
         cell.ticket = ticket
+        
         cell.ticketSeller.text = ticket.seller
         cell.price.text = ticket.price
         return cell
@@ -94,9 +96,21 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let post = self.events[indexPath.row]
-//        self.chosenEvent = post
-//        performSegue(withIdentifier: "YourEventsToEventPage", sender: self)
-        
+        let ticket = self.tickets[indexPath.row]
+        self.chosenTicket = ticket
+        performSegue(withIdentifier: "TicketFeedToTicketPage", sender: self)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            if identifier == "TicketFeedToTicketPage" {
+                if let dest = segue.destination as? TicketPageViewController {
+                    if let e = self.chosenTicket {
+                        dest.ticket = e;
+                        //                        print(dest.event?.name)
+                    }
+                }
+            }
+            
+        }
     }
 }
