@@ -570,8 +570,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-Eh-cnO">
-                                <rect key="frame" x="-0.5" y="280" width="375" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" text="Info" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qHc-Eh-cnO">
+                                <rect key="frame" x="-0.5" y="280" width="375" height="33"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

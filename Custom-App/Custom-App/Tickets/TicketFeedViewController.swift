@@ -34,9 +34,9 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
                         for ticketID in ids {
                             let ticketSale = allTickets[ticketID]
                             let sellerName = ticketSale!["seller name"]
-                            let information = ticketSale!["contact"]
+                            let information = ticketSale!["info"]
                             let priceOfTicket = ticketSale!["price"]
-                            let contactInfo = ticketSale!["info"]
+                            let contactInfo = ticketSale!["contact"]
                             let eventName = ticketSale!["event name"]
 //                            let post = posts[eventKey]
                             let ticket = Ticket(event: eventName as! String, seller: sellerName as! String, info: information as! String, price: priceOfTicket as! String, contactInfo: contactInfo as! String)
