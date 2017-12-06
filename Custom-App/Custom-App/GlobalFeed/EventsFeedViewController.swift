@@ -38,12 +38,11 @@ class EventsFeedViewController: UIViewController, UITableViewDelegate, UITableVi
                             let venue = post!["venue name"] as! String
                             let info = post!["info"] as! String
                             let eventID = post!["id"] as! String
-                            let event = Event(name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
-                            event.updateID(id: eventID)
+                            let event = Event(id: eventID, name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
+//                            event.updateID(id: eventID)
                             EventArray.append(event)
                             self.events.append(event)
                         }
-//                        print(self.events.count)
                         completion(EventArray)
                     })
                 } else {

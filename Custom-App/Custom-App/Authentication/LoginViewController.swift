@@ -36,6 +36,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
                     alertController.addAction(defaultAction)
                     self.present(alertController, animated: true, completion: nil)
+//                    DispatchQueue.main.async {
+//                        self.present(alertController, animated: true, completion: nil)
+//                    }
                 }
             }
         }
@@ -55,9 +58,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if Auth.auth().currentUser != nil {
-            self.performSegue(withIdentifier: "LogInToMain", sender: self)
-        }
+//        if Auth.auth().currentUser != nil {
+//            self.performSegue(withIdentifier: "LogInToMain", sender: self)
+//        }
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {

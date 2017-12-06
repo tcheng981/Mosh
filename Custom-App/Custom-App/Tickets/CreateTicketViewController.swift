@@ -33,7 +33,7 @@ class CreateTicketViewController: UIViewController {
         let seller = CurrentUser().username
         let ticketDict: [String: String] = ["event name": nameOfEvent, "seller name": seller!, "contact": contactInfo, "price": ticketPrice, "info": information]
         ticketRef.setValue(ticketDict)
-        ref.child("Ticket IDs").child((self.event?.ID!)!).childByAutoId().setValue(ticketID)
+        ref.child("Ticket IDs").child((self.event?.ID)!).childByAutoId().setValue(ticketID)
         self.performSegue(withIdentifier: "unwindTowardsViewController", sender: self)
     }
 

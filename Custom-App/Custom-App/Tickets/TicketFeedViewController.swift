@@ -30,7 +30,7 @@ class TicketFeedViewController: UIViewController, UITableViewDataSource, UITable
         dbRef.child("Ticket").observeSingleEvent(of: .value, with: { snapshot -> Void in
             if snapshot.exists() {
                 if let allTickets = snapshot.value as? [String:AnyObject] {
-                    user.getTicketFeed(eventID: self.event!.ID!, completion: { (ids) in
+                    user.getTicketFeed(eventID: self.event!.ID, completion: { (ids) in
                         for ticketID in ids {
                             let ticketSale = allTickets[ticketID]
                             let sellerName = ticketSale!["seller name"]

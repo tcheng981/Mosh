@@ -25,6 +25,7 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
     func getPosts(user: CurrentUser, completion: @escaping ([Event]?) -> Void) {
         let dbRef = Database.database().reference()
         var EventArray: [Event] = []
+        var alreadySeenIds: [String] = []
     
         dbRef.child("Events").observeSingleEvent(of: .value, with: { snapshot -> Void in
 //        dbRef.child("Users").child(self.currentUser.id!).child("myEvents").observeSingleEvent(of: .value, with: { snapshot -> Void in
@@ -40,16 +41,24 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
                             let timeStarts = post!["start time"] as! String
                             let venue = post!["venue name"] as! String
                             let info = post!["info"] as! String
-                            let event = Event(name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
-                            DispatchQueue.main.async {
-                                let eventID = post!["id"] as! String
-                                event.updateID(id: eventID)
+                            let eventID = post!["id"] as! String
+                            let event = Event(id: eventID, name: name, location: location, dateStarts: dateStarts, timeStarts: timeStarts, venue: venue, info: info)
+//                            DispatchQueue.main.async {
+//                                let eventID = post!["id"] as! String
+//                                event.updateID(id: eventID)
+//                                if (!alreadySeenIds.contains(eventID)) {
+//                                    EventArray.append(event)
+//                                    self.events.append(event)
+//                                    alreadySeenIds.append(eventID)
+//                                }
+//                            }
+                            if !alreadySeenIds.contains(eventID) {
+                                EventArray.append(event)
+                                self.events.append(event)
+                                alreadySeenIds.append(eventID)
                             }
-                            
-                            
-                            
-                            EventArray.append(event)
-                            self.events.append(event)
+
+
 
                         }
 //                        print(self.events.count)

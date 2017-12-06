@@ -16,16 +16,17 @@ class Event: NSObject {
     var timeStarts: String
     var venue: String
     var info: String
-    var ID: String?
+    var ID: String
     
     
-    init(name: String, location: String, dateStarts: String, timeStarts: String, venue: String, info: String) {
+    init(id: String, name: String, location: String, dateStarts: String, timeStarts: String, venue: String, info: String) {
         self.name = name
         self.location = location
         self.dateStarts = dateStarts
         self.timeStarts = timeStarts
         self.venue = venue
         self.info = info
+        self.ID = id
     }
     
     func updateInfo(name: String, location: String, dateStarts: String, timeStarts: String, venue: String, info: String) -> Void {
