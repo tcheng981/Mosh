@@ -17,8 +17,10 @@
 		AB9C7C4B1FD74BC6007E5F3F /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4A1FD74BC6007E5F3F /* Event.swift */; };
 		AB9C7C4D1FD7512F007E5F3F /* CurrentUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */; };
 		AB9C7C4F1FD77180007E5F3F /* CreateEventTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C4E1FD77180007E5F3F /* CreateEventTableCell.swift */; };
+		AB9C7C511FD77823007E5F3F /* EventsFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C501FD77823007E5F3F /* EventsFeedViewController.swift */; };
+		AB9C7C531FD77FA6007E5F3F /* FeedTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C521FD77FA6007E5F3F /* FeedTableCell.swift */; };
+		AB9C7C561FD78257007E5F3F /* EventPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9C7C551FD78257007E5F3F /* EventPageViewController.swift */; };
 		ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */; };
-		ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */; };
 		ABEDCC5D1FCFE6A6009A0CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */; };
 		ABEDCC5F1FCFE6A6009A0CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */; };
 		ABEDCC621FCFE6A6009A0CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABEDCC601FCFE6A6009A0CF7 /* LaunchScreen.storyboard */; };
@@ -58,9 +60,11 @@
 		AB9C7C4A1FD74BC6007E5F3F /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		AB9C7C4C1FD7512F007E5F3F /* CurrentUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentUser.swift; sourceTree = "<group>"; };
 		AB9C7C4E1FD77180007E5F3F /* CreateEventTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventTableCell.swift; sourceTree = "<group>"; };
+		AB9C7C501FD77823007E5F3F /* EventsFeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsFeedViewController.swift; sourceTree = "<group>"; };
+		AB9C7C521FD77FA6007E5F3F /* FeedTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedTableCell.swift; sourceTree = "<group>"; };
+		AB9C7C551FD78257007E5F3F /* EventPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPageViewController.swift; sourceTree = "<group>"; };
 		ABEDCC541FCFE6A6009A0CF7 /* Custom-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Custom-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		ABEDCC5C1FCFE6A6009A0CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABEDCC611FCFE6A6009A0CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 			path = MainPage;
 			sourceTree = "<group>";
 		};
+		AB9C7C541FD781DA007E5F3F /* GlobalFeed */ = {
+			isa = PBXGroup;
+			children = (
+				AB9C7C501FD77823007E5F3F /* EventsFeedViewController.swift */,
+				AB9C7C521FD77FA6007E5F3F /* FeedTableCell.swift */,
+			);
+			path = GlobalFeed;
+			sourceTree = "<group>";
+		};
 		ABEDCC4B1FCFE6A5009A0CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -150,10 +163,11 @@
 		ABEDCC561FCFE6A6009A0CF7 /* Custom-App */ = {
 			isa = PBXGroup;
 			children = (
+				AB9C7C541FD781DA007E5F3F /* GlobalFeed */,
 				AB33AA5C1FD51CD4003E9CC4 /* MainPage */,
 				ABEDCC571FCFE6A6009A0CF7 /* AppDelegate.swift */,
-				ABEDCC591FCFE6A6009A0CF7 /* ViewController.swift */,
 				ABEDCC5B1FCFE6A6009A0CF7 /* Main.storyboard */,
+				AB9C7C551FD78257007E5F3F /* EventPageViewController.swift */,
 				ABEDCC5E1FCFE6A6009A0CF7 /* Assets.xcassets */,
 				ABEDCC871FCFF0F5009A0CF7 /* Authentication */,
 				ABEDCC601FCFE6A6009A0CF7 /* LaunchScreen.storyboard */,
@@ -511,11 +525,13 @@
 			files = (
 				AB9C7C4F1FD77180007E5F3F /* CreateEventTableCell.swift in Sources */,
 				ABEDCC8B1FCFFCBB009A0CF7 /* LoginViewController.swift in Sources */,
-				ABEDCC5A1FCFE6A6009A0CF7 /* ViewController.swift in Sources */,
 				AB0EA3511FD37BD100DEB13A /* SignupViewController.swift in Sources */,
 				AB33AA571FD50CD7003E9CC4 /* CreateEventPageViewController.swift in Sources */,
 				AB33AA591FD51B74003E9CC4 /* MainPageViewController.swift in Sources */,
+				AB9C7C561FD78257007E5F3F /* EventPageViewController.swift in Sources */,
 				AB9C7C4B1FD74BC6007E5F3F /* Event.swift in Sources */,
+				AB9C7C531FD77FA6007E5F3F /* FeedTableCell.swift in Sources */,
+				AB9C7C511FD77823007E5F3F /* EventsFeedViewController.swift in Sources */,
 				AB9C7C4D1FD7512F007E5F3F /* CurrentUser.swift in Sources */,
 				ABEDCC581FCFE6A6009A0CF7 /* AppDelegate.swift in Sources */,
 			);

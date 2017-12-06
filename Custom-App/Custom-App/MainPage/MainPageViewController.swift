@@ -94,16 +94,7 @@ class MainPageViewController: UIViewController, UITableViewDataSource, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! CreateEventTableCell
         let post = self.events[indexPath.row]
         cell.nameOfEvent.text = post.name
-//        if let post = getPostFromIndexPath(indexPath: indexPath) {
-//            if post.read {
-//                cell.readImageView.image = UIImage(named: "read")
-//            }
-//            else {
-//                cell.readImageView.image = UIImage(named: "unread")
-//            }
-//            cell.usernameLabel.text = post.username
-//            cell.timeElapsedLabel.text = post.getTimeElapsedString()
-//        }
+
         return cell
     }
     
