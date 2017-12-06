@@ -15,7 +15,7 @@ class EventPageViewController: UIViewController {
     @IBOutlet weak var startTime: UILabel!
     @IBOutlet weak var startDate: UILabel!
     @IBOutlet weak var venue: UILabel!
-    
+    @IBOutlet weak var info: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.name.text = event?.name
@@ -23,6 +23,7 @@ class EventPageViewController: UIViewController {
         self.startTime.text = event?.timeStarts
         self.startDate.text = event?.dateStarts
         self.venue.text = event?.venue
+        self.info.text = event?.info
     }
 
 }
