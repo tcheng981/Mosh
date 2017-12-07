@@ -961,6 +961,13 @@
                                     <action selector="signUpPressed:" destination="1N5-b7-XsF" eventType="touchUpInside" id="TjR-LU-kuK"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moshlogo" translatesAutoresizingMaskIntoConstraints="NO" id="xFY-Lc-tSl">
+                                <rect key="frame" x="70.5" y="40" width="233" height="162"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="233" id="NI3-Ag-ANQ"/>
+                                    <constraint firstAttribute="height" constant="162" id="zbT-wf-Iij"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -969,9 +976,11 @@
                             <constraint firstItem="2ix-By-kVB" firstAttribute="top" secondItem="PVk-SQ-of8" secondAttribute="top" constant="150" id="6fV-DH-IBe"/>
                             <constraint firstItem="rHd-wV-QaZ" firstAttribute="leading" secondItem="PVk-SQ-of8" secondAttribute="leading" constant="139" id="CdS-3U-Jkj"/>
                             <constraint firstItem="DUz-7L-eME" firstAttribute="top" secondItem="dJl-bn-0nt" secondAttribute="bottom" constant="20" id="Cnd-wv-Cg5"/>
+                            <constraint firstItem="xFY-Lc-tSl" firstAttribute="top" secondItem="PVk-SQ-of8" secondAttribute="top" constant="20" id="DXM-sE-hq5"/>
                             <constraint firstItem="H6F-Mm-zsB" firstAttribute="leading" secondItem="PVk-SQ-of8" secondAttribute="leading" constant="38" id="FAJ-EZ-wEg"/>
                             <constraint firstItem="RYh-EN-roc" firstAttribute="top" secondItem="Bz0-fl-I2W" secondAttribute="bottom" constant="8" id="GGi-hR-Cs3"/>
                             <constraint firstItem="RYh-EN-roc" firstAttribute="leading" secondItem="PVk-SQ-of8" secondAttribute="leading" constant="16" id="JEe-6j-Emb"/>
+                            <constraint firstItem="xFY-Lc-tSl" firstAttribute="centerX" secondItem="vvh-xT-aAX" secondAttribute="centerX" id="JyK-u4-rkM"/>
                             <constraint firstItem="rHd-wV-QaZ" firstAttribute="top" secondItem="DUz-7L-eME" secondAttribute="bottom" constant="58" id="NKO-ny-zef"/>
                             <constraint firstItem="H6F-Mm-zsB" firstAttribute="top" secondItem="RYh-EN-roc" secondAttribute="bottom" constant="24" id="PIB-aH-cZL"/>
                             <constraint firstItem="H6F-Mm-zsB" firstAttribute="top" secondItem="RYh-EN-roc" secondAttribute="bottom" constant="24" id="QDD-QU-RUb"/>
@@ -1018,7 +1027,7 @@
         <image name="moshlogo" width="2040" height="900"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="diC-RA-pXl"/>
+        <segue reference="VsJ-Vs-rBO"/>
         <segue reference="kv9-Pd-hAF"/>
     </inferredMetricsTieBreakers>
 </document>
